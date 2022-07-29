@@ -1,0 +1,140 @@
+*{
+    margin:0;
+    overflow-x:hidden;
+}
+body{
+    background-color: rgb(85, 85, 246);
+    
+}
+nav{ 
+    position:absolute;
+    transform:scale(1,0);
+    transform-origin:20% 40%;
+    height: 100%;
+    width:100%;
+    background: rgba(44, 6, 235, 0.378);
+    transition:transform 250ms ease-in-out 250ms;
+    
+}
+nav a{
+    opacity: 0;
+    transition:opacity 250ms ease-in-out 250ms;
+}
+.nav_label{
+    position:absolute;
+    z-index:999;
+}
+.nav_label span::before,
+.nav_label span,
+.nav_label span::after{
+    display:block;
+    position:relative;
+    left:1em;
+    top:1em;
+    height:.15em;
+    width:2em;
+    background-color:rgb(239, 240, 232);
+}
+.nav_label span::before,
+.nav_label span::after{
+    content:'';
+    position:absolute;
+}
+.nav_label span::before{
+     bottom:.5em;
+     left:.1em;
+}
+.nav_label span::after{
+    top:.5em;
+    left:.1em;
+}
+nav ul{
+    
+    float:left;
+    list-style:none;
+}
+nav li{
+    padding:5em 0em 0em 2.5em ;
+}
+#nav_toggle{
+    display:none;  
+}
+
+
+
+.nav_toggle:checked ~ nav {
+    
+    transform:scale(1,1);
+    
+}
+.nav_toggle:checked ~ nav a{
+    opacity:1;
+    transition:opacity 250ms ease-in-out 250ms;
+}
+
+nav a{
+    font-size:1.5rem;
+    color:wheat;
+    text-decoration:none;
+}
+nav a:focus{
+    border:2px solid wheat;
+    border-radius:30px;
+    padding:12px;
+    
+}
+
+.image{
+    display:grid;
+    padding:5em 1em 0em 2em;
+    grid-template-columns:repeat(2,1fr);
+    gap:.5em;
+}
+
+img{
+    width:8em;
+    height:8em;
+}
+
+.logo{
+    display:none;
+}
+@media (min-width:800px){
+    .nav_label{
+    display:none;
+    }
+
+    nav{
+        all:unset;
+        
+    }
+    ul{
+      
+     display:flex;
+     position:absolute;
+     right:40%;
+     top:-2em;
+    }
+    nav a{
+        opacity:1;
+    }
+
+    .image,
+    img{
+        all:unset;
+    }
+    .image{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:3em;
+        margin:8em;
+    
+}
+.logo{
+    display:inline-block;
+    position: relative;
+    width:15em;
+    height:12em;
+}
+
+}
